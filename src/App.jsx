@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { CardList } from './components/cards';
 import './App.css';
 
 const App = () => {
@@ -10,6 +11,8 @@ const App = () => {
 
   useEffect(() => {
     setLoading(true);
+    setOffset(0);
+    setLimit(151);
 
     const fetchPokemonData = async (offset, limit) => {
       const res = await axios.get(
@@ -27,8 +30,6 @@ const App = () => {
       );
 
       setPokemonData(individualPokemonData);
-      setOffset(1);
-      setLimit(151);
       setLoading(false);
     };
 
@@ -41,7 +42,11 @@ const App = () => {
     // eslint-disable-next-line
   }, []);
 
-  return <div>{loading ? <h1>Loading...</h1> : <h1>fetchPokemonData</h1>}</div>;
+  return (
+    <div>
+      {loading ? <h1>Loading...</h1> : <CardList pokemonData={pokemonData} />}
+    </div>
+  );
 };
 
 export default App;
