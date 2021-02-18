@@ -1,18 +1,14 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { CardList } from './components/cards';
-import './App.css';
+import './assets/css/App.css';
 
 const App = () => {
   const [pokemonData, setPokemonData] = useState([]);
-  const [offset, setOffset] = useState(0);
-  const [limit, setLimit] = useState(0);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    setOffset(0);
-    setLimit(151);
 
     const fetchPokemonData = async (offset, limit) => {
       const res = await axios.get(
@@ -34,7 +30,7 @@ const App = () => {
     };
 
     try {
-      fetchPokemonData(offset, limit);
+      fetchPokemonData(0, 151);
     } catch (error) {
       console.error(error);
     }
@@ -43,7 +39,8 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex-container">
+      <h1>React Pokedex</h1>
       {loading ? <h1>Loading...</h1> : <CardList pokemonData={pokemonData} />}
     </div>
   );
