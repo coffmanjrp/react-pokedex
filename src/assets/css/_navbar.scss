@@ -1,0 +1,15 @@
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.7rem 2rem;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+  z-index: 100;
+}

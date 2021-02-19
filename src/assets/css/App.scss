@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-  --bg-color: #efefbb;
+  --bg-color: #cdc2ca;
   --bg-gradient: linear-gradient(to right, #f1ecf0, #cdc2ca);
   --card-bg-color: #eee;
 }
@@ -112,4 +112,5 @@ h1 {
   }
 }
 
+@import 'navbar';
 @import 'loading';
