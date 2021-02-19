@@ -19,9 +19,9 @@ const CardState = ({ children }) => {
       const res = await axios.get(
         `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
       );
-      let data = await res.data;
+      const data = await res.data;
 
-      const individualPokemonData = await Promise.all(
+      const dataResult = await Promise.all(
         data.results.map(async (pokemon) => {
           const res = await axios.get(pokemon.url);
           const data = await res.data;
@@ -30,7 +30,7 @@ const CardState = ({ children }) => {
         })
       );
 
-      dispatch({ type: GET_POKEMON_DATA, payload: individualPokemonData });
+      dispatch({ type: GET_POKEMON_DATA, payload: dataResult });
     };
 
     try {

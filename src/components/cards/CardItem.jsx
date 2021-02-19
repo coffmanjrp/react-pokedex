@@ -13,7 +13,7 @@ const CardItem = ({ pokemon }) => {
       </div>
       <div className="overview">
         <div className="number">No.{id}</div>
-        <h3 className="name">{name}</h3>
+        <h3 className="name">{name.charAt(0).toUpperCase() + name.slice(1)}</h3>
         <small className="type">
           {types.map((type, index) => (
             <span
