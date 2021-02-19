@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { CardItem } from './';
+import { Loading } from '../layouts';
 import { CardContext } from '../../context/cards';
 
 const CardList = () => {
@@ -13,7 +14,7 @@ const CardList = () => {
   }, []);
 
   if (isLoading) {
-    return <h2>Loading...</h2>;
+    return <Loading />;
   }
 
   return (
