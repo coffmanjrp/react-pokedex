@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* Variables */
 :root {
   --bg-color: var(--primary-color);
   --bg-gradient: linear-gradient(to right, var(--primary-color), #f1ecf0);
@@ -11,6 +12,7 @@
   --card-bg-color: #eee;
 }
 
+/* Basic styles */
 *,
 *:before,
 *:after {
@@ -24,9 +26,29 @@ body {
   background-color: var(--bg-color);
   background-image: var(--bg-gradient);
   font-family: 'Noto Sans', sans-serif;
-  color: var(--stroke-color);
+  font-size: 1rem;
+  color: var(--dark-color);
+  line-height: 1.6;
 }
 
+a {
+  color: var(--high-light-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--dark-color);
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* Utilities */
 .flex-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,11 +65,105 @@ body {
           align-items: center;
 }
 
-h1 {
-  margin-bottom: 1rem;
-  letter-spacing: 0.1875rem;
+/* Padding */
+.p {
+  padding: 0.5rem;
 }
 
+.p-1 {
+  padding: 1rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.py {
+  padding: 0.5rem 0;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+
+.py-2 {
+  padding: 2rem 0;
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+.px {
+  padding: 0 0.5rem;
+}
+
+.px-1 {
+  padding: 0 1rem;
+}
+
+.px-2 {
+  padding: 0 2rem;
+}
+
+.px-3 {
+  padding: 0 3rem;
+}
+
+/* Margin */
+.m {
+  margin: 0.5rem;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.my {
+  margin: 0.5rem 0;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.my-3 {
+  margin: 3rem 0;
+}
+
+.mx {
+  margin: 0 0.5rem;
+}
+
+.mx-1 {
+  margin: 0 1rem;
+}
+
+.mx-2 {
+  margin: 0 2rem;
+}
+
+.mx-3 {
+  margin: 0 3rem;
+}
+
+/* Card list */
 .poke-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -118,6 +234,7 @@ h1 {
 
 .pokemon-card .name {
   margin-top: 3px;
+  color: var(--stroke-color);
   letter-spacing: 0.0625rem;
 }
 
@@ -176,6 +293,39 @@ h1 {
   z-index: 100;
 }
 
+.navbar h1 {
+  letter-spacing: 0.1875rem;
+}
+
+.navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar a {
+  margin: 0 0.25rem;
+  padding: 0.45rem;
+  color: #fff;
+}
+
+.navbar a:hover {
+  color: var(--stroke-color);
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    display: block;
+    text-align: center;
+  }
+  .navbar ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+}
+
 /* Loading spinner */
 .loading {
   display: block;
@@ -184,7 +334,6 @@ h1 {
           animation: rotate 1.5s ease infinite;
   -webkit-transform-origin: center;
           transform-origin: center;
-  opacity: 0.8;
 }
 
 .loading-container {

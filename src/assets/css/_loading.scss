@@ -1,16 +1,15 @@
 /* Loading spinner */
 .loading {
+  display: block;
+  max-width: 50px;
+  animation: rotate 1.5s ease infinite;
+  transform-origin: center;
   &-container {
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 100;
   }
-  display: block;
-  max-width: 50px;
-  animation: rotate 1.5s ease infinite;
-  transform-origin: center;
-  opacity: 0.8;
 }
 
 @keyframes rotate {
