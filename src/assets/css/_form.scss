@@ -1,0 +1,31 @@
+/* Forms */
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'],
+textarea {
+  display: block;
+  padding-bottom: 0.2rem;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  font-size: 1rem;
+  color: var(--dark-color);
+  &::placeholder {
+    font-family: FontAwesome, sans-serif;
+    color: var(--primary-color);
+  }
+  &:focus {
+    outline: none;
+    border-bottom-color: var(--stroke-color);
+    &::placeholder {
+      color: var(--dark-color);
+    }
+  }
+}
+
+input[type='submit'],
+button {
+  font: inherit;
+}

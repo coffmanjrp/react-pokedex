@@ -310,7 +310,7 @@ img {
 }
 
 .navbar a:hover {
-  color: var(--stroke-color);
+  color: var(--dark-color);
 }
 
 @media (max-width: 700px) {
@@ -324,6 +324,104 @@ img {
             justify-content: center;
     text-align: center;
   }
+}
+
+/* Forms */
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'],
+textarea {
+  display: block;
+  padding-bottom: 0.2rem;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  font-size: 1rem;
+  color: var(--dark-color);
+}
+
+input[type='text']::-webkit-input-placeholder,
+input[type='email']::-webkit-input-placeholder,
+input[type='password']::-webkit-input-placeholder,
+input[type='date']::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-family: FontAwesome, sans-serif;
+  color: var(--primary-color);
+}
+
+input[type='text']:-ms-input-placeholder,
+input[type='email']:-ms-input-placeholder,
+input[type='password']:-ms-input-placeholder,
+input[type='date']:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  font-family: FontAwesome, sans-serif;
+  color: var(--primary-color);
+}
+
+input[type='text']::-ms-input-placeholder,
+input[type='email']::-ms-input-placeholder,
+input[type='password']::-ms-input-placeholder,
+input[type='date']::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  font-family: FontAwesome, sans-serif;
+  color: var(--primary-color);
+}
+
+input[type='text']::placeholder,
+input[type='email']::placeholder,
+input[type='password']::placeholder,
+input[type='date']::placeholder,
+textarea::placeholder {
+  font-family: FontAwesome, sans-serif;
+  color: var(--primary-color);
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus,
+input[type='date']:focus,
+textarea:focus {
+  outline: none;
+  border-bottom-color: var(--stroke-color);
+}
+
+input[type='text']:focus::-webkit-input-placeholder,
+input[type='email']:focus::-webkit-input-placeholder,
+input[type='password']:focus::-webkit-input-placeholder,
+input[type='date']:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  color: var(--dark-color);
+}
+
+input[type='text']:focus:-ms-input-placeholder,
+input[type='email']:focus:-ms-input-placeholder,
+input[type='password']:focus:-ms-input-placeholder,
+input[type='date']:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder {
+  color: var(--dark-color);
+}
+
+input[type='text']:focus::-ms-input-placeholder,
+input[type='email']:focus::-ms-input-placeholder,
+input[type='password']:focus::-ms-input-placeholder,
+input[type='date']:focus::-ms-input-placeholder,
+textarea:focus::-ms-input-placeholder {
+  color: var(--dark-color);
+}
+
+input[type='text']:focus::placeholder,
+input[type='email']:focus::placeholder,
+input[type='password']:focus::placeholder,
+input[type='date']:focus::placeholder,
+textarea:focus::placeholder {
+  color: var(--dark-color);
+}
+
+input[type='submit'],
+button {
+  font: inherit;
 }
 
 /* Loading spinner */

@@ -6,10 +6,8 @@ const Navbar = ({ title }) => {
     <>
       <div className="navbar">
         <h1>{title}</h1>
+        <Search />
         <ul>
-          <li>
-            <Search />
-          </li>
           <li>
             <Link to="/">Home</Link>
           </li>

@@ -25,10 +25,11 @@ const Search = () => {
   return (
     <>
       <div>
-        <form className="form">
+        <form>
           <input
             type="text"
-            placeholder="Search Pokemon..."
+            name="search"
+            placeholder="&nbsp;&#xf002;"
             ref={text}
             onChange={onChange}
           />
