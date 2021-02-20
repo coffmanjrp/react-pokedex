@@ -5,7 +5,7 @@ const ListItem = ({ pokemon }) => {
 
   return (
     <div
-      className="pokemon-card"
+      className="pokemon-list-item"
       style={{ backgroundColor: typeColor[types[0].type.name] }}
     >
       <div className="img-container">

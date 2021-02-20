@@ -17,7 +17,7 @@ const List = () => {
   }
 
   return (
-    <div className="poke-container">
+    <div className="list-container">
       {search !== null
         ? search.map((pokemon) => (
             <ListItem key={pokemon.id} pokemon={pokemon} />

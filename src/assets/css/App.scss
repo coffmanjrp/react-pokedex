@@ -10,7 +10,7 @@
   --high-light-color: #3da9fc;
   --stroke-color: #094067;
   --dark-color: #5f6c7b;
-  --card-bg-color: #eee;
+  --list-bg-color: #eee;
 }
 
 /* Basic styles */
@@ -135,8 +135,8 @@ img {
   }
 }
 
-/* Card list */
-.poke-container {
+/* list */
+.list-container {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -146,9 +146,9 @@ img {
   max-width: 1200px;
 }
 
-.pokemon-card {
+.pokemon-list-item {
   padding: 20px;
-  background-color: var(--card-bg-color);
+  background-color: var(--list-bg-color);
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
