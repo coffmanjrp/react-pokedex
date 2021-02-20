@@ -5,11 +5,10 @@ import { CardContext } from '../../context/cards';
 
 const CardList = () => {
   const cardContext = useContext(CardContext);
-  const { pokemonData, isLoading, getPokemonData } = cardContext;
+  const { pokemonData, search, isLoading, getPokemonData } = cardContext;
 
   useEffect(() => {
     getPokemonData();
-
     //eslint-disable-next-line
   }, []);
 
@@ -19,9 +18,13 @@ const CardList = () => {
 
   return (
     <div className="poke-container">
-      {pokemonData.map((pokemon) => (
-        <CardItem key={pokemon.id} pokemon={pokemon} />
-      ))}
+      {search !== null
+        ? search.map((pokemon) => (
+            <CardItem key={pokemon.id} pokemon={pokemon} />
+          ))
+        : pokemonData.map((pokemon) => (
+            <CardItem key={pokemon.id} pokemon={pokemon} />
+          ))}
     </div>
   );
 };

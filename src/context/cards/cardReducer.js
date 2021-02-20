@@ -1,4 +1,10 @@
-import { GET_POKEMON_DATA, SET_LOADING, LOAD_ERROR } from '../types';
+import {
+  GET_POKEMON_DATA,
+  SEARCH_POKEMON,
+  CLEAR_SEARCH,
+  SET_LOADING,
+  LOAD_ERROR,
+} from '../types';
 
 const cardReducer = (state, action) => {
   switch (action.type) {
@@ -7,6 +13,20 @@ const cardReducer = (state, action) => {
         ...state,
         pokemonData: action.payload,
         isLoading: false,
+      };
+    case SEARCH_POKEMON:
+      return {
+        ...state,
+        search: state.pokemonData.filter((pokemon) => {
+          const regex = new RegExp(`${action.payload}`, 'gi');
+          const id = pokemon.id.toString();
+          return pokemon.name.match(regex) || id.match(regex);
+        }),
+      };
+    case CLEAR_SEARCH:
+      return {
+        ...state,
+        search: null,
       };
     case SET_LOADING:
       return {

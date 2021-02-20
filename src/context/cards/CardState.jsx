@@ -1,11 +1,18 @@
 import { useReducer } from 'react';
 import axios from 'axios';
 import { CardContext, cardReducer } from './';
-import { GET_POKEMON_DATA, SET_LOADING, LOAD_ERROR } from '../types';
+import {
+  GET_POKEMON_DATA,
+  SEARCH_POKEMON,
+  CLEAR_SEARCH,
+  SET_LOADING,
+  LOAD_ERROR,
+} from '../types';
 
 const CardState = ({ children }) => {
   const initialState = {
     pokemonData: [],
+    search: null,
     isLoading: false,
   };
 
@@ -22,8 +29,8 @@ const CardState = ({ children }) => {
       const data = await res.data;
 
       const dataResult = await Promise.all(
-        data.results.map(async (pokemon) => {
-          const res = await axios.get(pokemon.url);
+        data.results.map(async (result) => {
+          const res = await axios.get(result.url);
           const data = await res.data;
 
           return data;
@@ -40,6 +47,13 @@ const CardState = ({ children }) => {
     }
   };
 
+  // Search Pokemon
+  const searchPokemon = (text) =>
+    dispatch({ type: SEARCH_POKEMON, payload: text });
+
+  // Clear search state
+  const clearSearch = () => dispatch({ type: CLEAR_SEARCH });
+
   // Set loading
   const setLoading = () => dispatch({ type: SET_LOADING });
 
@@ -48,7 +62,11 @@ const CardState = ({ children }) => {
       value={{
         pokemonData: state.pokemonData,
         isLoading: state.isLoading,
+        search: state.search,
         getPokemonData,
+        searchPokemon,
+        clearSearch,
+        setLoading,
       }}
     >
       {children}
