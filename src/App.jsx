@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Navbar } from './components/layouts';
 import { About, Home } from './components/pages';
-import { CardState } from './context/cards';
+import { PokemonState } from './context/pokemon';
 import './assets/css/App.css';
 
 const App = () => {
   return (
-    <CardState>
+    <PokemonState>
       <Router>
         <div className="flex-container">
           <Navbar />
@@ -16,7 +16,7 @@ const App = () => {
           </Switch>
         </div>
       </Router>
-    </CardState>
+    </PokemonState>
   );
 };
 

@@ -1,9 +1,9 @@
 import { useContext, useEffect, useRef } from 'react';
-import { CardContext } from '../../context/cards';
+import { PokemonContext } from '../../context/pokemon';
 
 const Search = () => {
-  const cardContext = useContext(CardContext);
-  const { search, searchPokemon, clearSearch } = cardContext;
+  const pokemonContext = useContext(PokemonContext);
+  const { search, searchPokemon, clearSearch } = pokemonContext;
   const text = useRef('');
 
   useEffect(() => {

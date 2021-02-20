@@ -6,7 +6,7 @@ import {
   LOAD_ERROR,
 } from '../types';
 
-const cardReducer = (state, action) => {
+const pokemonReducer = (state, action) => {
   switch (action.type) {
     case GET_POKEMON_DATA:
       return {
@@ -38,4 +38,4 @@ const cardReducer = (state, action) => {
   }
 };
 
-export default cardReducer;
+export default pokemonReducer;

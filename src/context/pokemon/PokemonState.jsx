@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 import axios from 'axios';
-import { CardContext, cardReducer } from './';
+import { PokemonContext, pokemonReducer } from '.';
 import {
   GET_POKEMON_DATA,
   SEARCH_POKEMON,
@@ -9,14 +9,14 @@ import {
   LOAD_ERROR,
 } from '../types';
 
-const CardState = ({ children }) => {
+const PokemonState = ({ children }) => {
   const initialState = {
     pokemonData: [],
     search: null,
     isLoading: false,
   };
 
-  const [state, dispatch] = useReducer(cardReducer, initialState);
+  const [state, dispatch] = useReducer(pokemonReducer, initialState);
 
   // Get Pokemon data
   const getPokemonData = async () => {
@@ -58,7 +58,7 @@ const CardState = ({ children }) => {
   const setLoading = () => dispatch({ type: SET_LOADING });
 
   return (
-    <CardContext.Provider
+    <PokemonContext.Provider
       value={{
         pokemonData: state.pokemonData,
         isLoading: state.isLoading,
@@ -70,8 +70,8 @@ const CardState = ({ children }) => {
       }}
     >
       {children}
-    </CardContext.Provider>
+    </PokemonContext.Provider>
   );
 };
 
-export default CardState;
+export default PokemonState;

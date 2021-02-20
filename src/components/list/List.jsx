@@ -1,11 +1,11 @@
 import { useContext, useEffect } from 'react';
-import { CardItem } from './';
+import { ListItem } from './';
 import { Loading } from '../layouts';
-import { CardContext } from '../../context/cards';
+import { PokemonContext } from '../../context/pokemon';
 
-const CardList = () => {
-  const cardContext = useContext(CardContext);
-  const { pokemonData, search, isLoading, getPokemonData } = cardContext;
+const List = () => {
+  const pokemonContext = useContext(PokemonContext);
+  const { pokemonData, search, isLoading, getPokemonData } = pokemonContext;
 
   useEffect(() => {
     getPokemonData();
@@ -20,13 +20,13 @@ const CardList = () => {
     <div className="poke-container">
       {search !== null
         ? search.map((pokemon) => (
-            <CardItem key={pokemon.id} pokemon={pokemon} />
+            <ListItem key={pokemon.id} pokemon={pokemon} />
           ))
         : pokemonData.map((pokemon) => (
-            <CardItem key={pokemon.id} pokemon={pokemon} />
+            <ListItem key={pokemon.id} pokemon={pokemon} />
           ))}
     </div>
   );
 };
 
-export default CardList;
+export default List;

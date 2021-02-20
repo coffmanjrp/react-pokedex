@@ -1,9 +1,9 @@
-import { CardList } from '../cards';
+import { List } from '../list';
 
 const Home = () => {
   return (
     <>
-      <CardList />
+      <List />
     </>
   );
 };

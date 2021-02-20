@@ -1,6 +1,6 @@
 import { typeColor } from '../../utils';
 
-const CardItem = ({ pokemon }) => {
+const ListItem = ({ pokemon }) => {
   const { id, name, types, sprites } = pokemon;
 
   return (
@@ -29,4 +29,4 @@ const CardItem = ({ pokemon }) => {
   );
 };
 
-export default CardItem;
+export default ListItem;
