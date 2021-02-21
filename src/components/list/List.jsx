@@ -17,6 +17,7 @@ const List = () => {
   useEffect(() => {
     getPokemonData();
     getPokemonSpeciesData();
+
     //eslint-disable-next-line
   }, []);
 
