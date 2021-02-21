@@ -5,10 +5,18 @@ import { PokemonContext } from '../../context/pokemon';
 
 const List = () => {
   const pokemonContext = useContext(PokemonContext);
-  const { pokemonData, search, isLoading, getPokemonData } = pokemonContext;
+  const {
+    pokemonData,
+    pokemonSpeciesData,
+    search,
+    isLoading,
+    getPokemonData,
+    getPokemonSpeciesData,
+  } = pokemonContext;
 
   useEffect(() => {
     getPokemonData();
+    getPokemonSpeciesData();
     //eslint-disable-next-line
   }, []);
 
@@ -23,7 +31,11 @@ const List = () => {
             <ListItem key={pokemon.id} pokemon={pokemon} />
           ))
         : pokemonData.map((pokemon) => (
-            <ListItem key={pokemon.id} pokemon={pokemon} />
+            <ListItem
+              key={pokemon.id}
+              pokemon={pokemon}
+              species={pokemonSpeciesData}
+            />
           ))}
     </div>
   );
