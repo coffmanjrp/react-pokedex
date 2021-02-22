@@ -5,7 +5,6 @@ import {
   SEARCH_POKEMON,
   CLEAR_SEARCH,
   SET_LOADING,
-  LOAD_ERROR,
 } from '../types';
 
 const pokemonReducer = (state, action) => {
@@ -21,6 +20,11 @@ const pokemonReducer = (state, action) => {
         ...state,
         pokemonSpeciesData: action.payload,
         isLoading: false,
+      };
+    case SET_GENERATION:
+      return {
+        ...state,
+        generation: action.payload,
       };
     case SEARCH_POKEMON:
       return {

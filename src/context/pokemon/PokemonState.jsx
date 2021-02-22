@@ -4,6 +4,7 @@ import { PokemonContext, pokemonReducer } from '.';
 import {
   GET_POKEMON_DATA,
   GET_POKEMON_SPECIES_DATA,
+  SET_GENERATION,
   SEARCH_POKEMON,
   CLEAR_SEARCH,
   SET_LOADING,
@@ -13,6 +14,7 @@ const PokemonState = ({ children }) => {
   const initialState = {
     pokemonData: [],
     pokemonSpeciesData: [],
+    generation: 0,
     search: null,
     isLoading: false,
   };
@@ -77,6 +79,10 @@ const PokemonState = ({ children }) => {
     }
   };
 
+  // Set pokemon generation
+  const setGeneration = (generation) =>
+    dispatch({ type: SET_GENERATION, payload: generation });
+
   // Search Pokemon
   const searchPokemon = (text) =>
     dispatch({ type: SEARCH_POKEMON, payload: text });
@@ -92,10 +98,12 @@ const PokemonState = ({ children }) => {
       value={{
         pokemonData: state.pokemonData,
         pokemonSpeciesData: state.pokemonSpeciesData,
+        generation: state.generation,
         isLoading: state.isLoading,
         search: state.search,
         getPokemonData,
         getPokemonSpeciesData,
+        setGeneration,
         searchPokemon,
         clearSearch,
         setLoading,
