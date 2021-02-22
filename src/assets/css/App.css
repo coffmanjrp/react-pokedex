@@ -165,6 +165,44 @@ img {
   margin: 0 3rem;
 }
 
+/* Button */
+.btn {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.4rem 1.3rem;
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 1rem;
+  color: var(--dark-color);
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn-link {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-sm {
+  margin-right: 0.3rem;
+  padding: 0.3rem 1rem;
+  font-size: 0.8rem;
+}
+
 /* list */
 .list-container {
   display: -webkit-box;

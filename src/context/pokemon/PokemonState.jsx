@@ -52,7 +52,7 @@ const PokemonState = ({ children }) => {
   const getPokemonSpeciesData = async (generation) => {
     setLoading();
 
-    const fetchData = async (offset, limit) => {
+    const fetchData = async () => {
       const res = await axios.get(
         `https://pokeapi.co/api/v2/pokemon-species?offset=${generation[1]}&limit=${generation[2]}`
       );

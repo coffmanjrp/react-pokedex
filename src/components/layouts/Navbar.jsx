@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-import { Search } from './';
+import { Pagination, Search } from './';
 
 const Navbar = ({ title }) => {
   return (
     <>
       <div className="navbar">
         <h1>{title}</h1>
+        <Pagination />
         <ul>
           <li>
             <Search />

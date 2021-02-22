@@ -1,0 +1,31 @@
+/* Button */
+.btn {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.4rem 1.3rem;
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 1rem;
+  color: var(--dark-color);
+  transition: opacity 0.2s ease-in;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:focus {
+    outline: none;
+  }
+  &-link {
+    background-color: transparent;
+    color: var(--primary-color);
+  }
+  &-block {
+    display: block;
+    width: 100%;
+  }
+  &-sm {
+    margin-right: 0.3rem;
+    padding: 0.3rem 1rem;
+    font-size: 0.8rem;
+  }
+}
