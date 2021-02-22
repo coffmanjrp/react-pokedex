@@ -149,6 +149,10 @@ img {
 }
 
 .pokemon-list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   background-color: var(--list-bg-color);
   border-radius: 10px;

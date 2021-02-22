@@ -1,23 +1,15 @@
 import { useContext, useEffect } from 'react';
 import { ListItem } from './';
+import { generations } from '../../utils';
 import { Loading } from '../layouts';
 import { PokemonContext } from '../../context/pokemon';
 
 const List = () => {
   const pokemonContext = useContext(PokemonContext);
-  const {
-    pokemonData,
-    pokemonSpeciesData,
-    search,
-    isLoading,
-    getPokemonData,
-    getPokemonSpeciesData,
-  } = pokemonContext;
+  const { pokemonData, search, isLoading, getPokemonData } = pokemonContext;
 
   useEffect(() => {
-    getPokemonData();
-    getPokemonSpeciesData();
-
+    getPokemonData(generations[0]);
     //eslint-disable-next-line
   }, []);
 
@@ -26,19 +18,17 @@ const List = () => {
   }
 
   return (
-    <div className="list-container">
-      {search !== null
-        ? search.map((pokemon) => (
-            <ListItem key={pokemon.id} pokemon={pokemon} />
-          ))
-        : pokemonData.map((pokemon) => (
-            <ListItem
-              key={pokemon.id}
-              pokemon={pokemon}
-              species={pokemonSpeciesData}
-            />
-          ))}
-    </div>
+    <>
+      <div className="list-container">
+        {search !== null
+          ? search.map((pokemon) => (
+              <ListItem key={pokemon.id} pokemon={pokemon} />
+            ))
+          : pokemonData.map((pokemon) => (
+              <ListItem key={pokemon.id} pokemon={pokemon} />
+            ))}
+      </div>
+    </>
   );
 };
 

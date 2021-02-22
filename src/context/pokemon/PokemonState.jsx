@@ -7,7 +7,6 @@ import {
   SEARCH_POKEMON,
   CLEAR_SEARCH,
   SET_LOADING,
-  LOAD_ERROR,
 } from '../types';
 
 const PokemonState = ({ children }) => {
@@ -21,12 +20,12 @@ const PokemonState = ({ children }) => {
   const [state, dispatch] = useReducer(pokemonReducer, initialState);
 
   // Get Pokemon data
-  const getPokemonData = async () => {
+  const getPokemonData = async (generation) => {
     setLoading();
 
-    const fetchData = async (offset, limit) => {
+    const fetchData = async () => {
       const res = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
+        `https://pokeapi.co/api/v2/pokemon?offset=${generation[1]}&limit=${generation[2]}`
       );
       const data = await res.data;
 
@@ -43,19 +42,19 @@ const PokemonState = ({ children }) => {
     };
 
     try {
-      fetchData(0, 151);
+      fetchData();
     } catch (error) {
       throw new Error(error);
     }
   };
 
   // Get Pokemon species data
-  const getPokemonSpeciesData = async () => {
+  const getPokemonSpeciesData = async (generation) => {
     setLoading();
 
     const fetchData = async (offset, limit) => {
       const res = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon-species?offset=${offset}&limit=${limit}`
+        `https://pokeapi.co/api/v2/pokemon-species?offset=${generation[1]}&limit=${generation[2]}`
       );
       const data = await res.data;
 
@@ -72,7 +71,7 @@ const PokemonState = ({ children }) => {
     };
 
     try {
-      fetchData(0, 151);
+      fetchData();
     } catch (error) {
       throw new Error(error);
     }
