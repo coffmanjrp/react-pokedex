@@ -5,21 +5,6 @@ import { PokemonContext } from '../../context/pokemon';
 const Pagination = () => {
   const pokemonContext = useContext(PokemonContext);
   const { generation, getPokemonData, setGeneration } = pokemonContext;
-
-  useEffect(() => {
-    getPokemonData(generations[generation]);
-
-    //eslint-disable-next-line
-  }, [generation]);
-
-  const handlePrev = () => {
-    setGeneration(generation - 1);
-  };
-
-  const handleNext = () => {
-    setGeneration(generation + 1);
-  };
-
   let suffix;
 
   switch (generation) {
@@ -36,6 +21,20 @@ const Pagination = () => {
       suffix = 'th';
       break;
   }
+
+  useEffect(() => {
+    getPokemonData(generations[generation]);
+
+    //eslint-disable-next-line
+  }, [generation]);
+
+  const handlePrev = () => {
+    setGeneration(generation - 1);
+  };
+
+  const handleNext = () => {
+    setGeneration(generation + 1);
+  };
 
   return (
     <>

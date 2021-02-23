@@ -221,6 +221,10 @@ img {
   max-width: 1200px;
 }
 
+.list-container a {
+  color: var(--dark-color);
+}
+
 .pokemon-list-item {
   display: -webkit-box;
   display: -ms-flexbox;

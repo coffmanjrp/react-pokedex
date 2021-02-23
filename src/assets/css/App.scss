@@ -148,6 +148,9 @@ img {
   align-items: space-between;
   margin: 0 auto;
   max-width: 1200px;
+  a {
+    color: var(--dark-color);
+  }
 }
 
 .pokemon-list-item {

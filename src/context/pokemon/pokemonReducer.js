@@ -1,5 +1,6 @@
 import {
   GET_POKEMON_DATA,
+  GET_POKEMON_INDIVIDUAL_DATA,
   GET_POKEMON_SPECIES_DATA,
   SET_GENERATION,
   SEARCH_POKEMON,
@@ -13,6 +14,12 @@ const pokemonReducer = (state, action) => {
       return {
         ...state,
         pokemonData: action.payload,
+        isLoading: false,
+      };
+    case GET_POKEMON_INDIVIDUAL_DATA:
+      return {
+        ...state,
+        pokemonIndividualData: action.payload,
         isLoading: false,
       };
     case GET_POKEMON_SPECIES_DATA:

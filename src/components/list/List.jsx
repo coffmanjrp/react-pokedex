@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { ListItem } from './';
 import { Loading } from '../layouts';
 import { PokemonContext } from '../../context/pokemon';
