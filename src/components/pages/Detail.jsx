@@ -14,6 +14,7 @@ const Detail = ({ match }) => {
   } = pokemonContext;
   const {
     id,
+    name,
     sprites,
     weight,
     height,
@@ -21,6 +22,7 @@ const Detail = ({ match }) => {
     abilities,
   } = pokemonIndividualData;
   const { names, genera, flavor_text_entries, generation } = pokemonSpeciesData;
+  const isShiny = false;
 
   useEffect(() => {
     getPokemonIndividualData(match.params.id);
@@ -46,15 +48,23 @@ const Detail = ({ match }) => {
       </Link>
       <div className="flex-container" style={{ flexDirection: 'row' }}>
         <div>
-          <img
-            src={sprites.front_default}
-            alt={names[7].name}
-            style={{ width: '200px' }}
-          />
+          {!isShiny ? (
+            <img
+              src={sprites.front_default}
+              alt={name}
+              style={{ width: '200px' }}
+            />
+          ) : (
+            <img
+              src={sprites.front_shiny}
+              alt={name}
+              style={{ width: '200px' }}
+            />
+          )}
         </div>
         <div>
           <div>No.{id}</div>
-          <h2>{names[7].name}</h2>
+          <h2>{name}</h2>
           <p>{genera[7].genus}</p>
           <p>{generation.name}</p>
           <p>Weight: {weight / 10}Kg</p>
@@ -62,13 +72,16 @@ const Detail = ({ match }) => {
         </div>
       </div>
       <div className="flex-container" style={{ flexDirection: 'row' }}>
-        <ul>
-          {stats.map((stat) => (
-            <li>
-              {stat.stat.name}: {stat.base_stat}
-            </li>
-          ))}
-        </ul>
+        <div>
+          <h4>Stats</h4>
+          <ul>
+            {stats.map((stat) => (
+              <li>
+                {stat.stat.name}: {stat.base_stat}
+              </li>
+            ))}
+          </ul>
+        </div>
         <div>
           <h4>Abilities</h4>
           <ul>

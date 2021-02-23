@@ -3,6 +3,7 @@ import { typeColor } from '../../utils';
 
 const ListItem = ({ pokemon }) => {
   const { id, name, types, sprites } = pokemon;
+  const isShiny = false;
 
   return (
     <>
@@ -12,7 +13,11 @@ const ListItem = ({ pokemon }) => {
           style={{ backgroundColor: typeColor[types[0].type.name] }}
         >
           <div className="img-container">
-            <img src={sprites.front_default} alt={name} />
+            {!isShiny ? (
+              <img src={sprites.front_default} alt={name} />
+            ) : (
+              <img src={sprites.front_shiny} alt={name} />
+            )}
           </div>
           <div className="overview">
             <div className="number">No.{id}</div>
