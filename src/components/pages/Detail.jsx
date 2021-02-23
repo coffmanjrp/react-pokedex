@@ -12,8 +12,15 @@ const Detail = ({ match }) => {
     getPokemonIndividualData,
     getPokemonSpeciesData,
   } = pokemonContext;
-  const { id, name, sprites } = pokemonIndividualData;
-  const { names, genera } = pokemonSpeciesData;
+  const {
+    id,
+    sprites,
+    weight,
+    height,
+    stats,
+    abilities,
+  } = pokemonIndividualData;
+  const { names, genera, flavor_text_entries, generation } = pokemonSpeciesData;
 
   useEffect(() => {
     getPokemonIndividualData(match.params.id);
@@ -22,24 +29,57 @@ const Detail = ({ match }) => {
     // eslint-disable-next-line
   }, []);
 
-  if (names === undefined || genera === undefined || sprites === undefined) {
+  if (
+    isLoading ||
+    names === undefined ||
+    genera === undefined ||
+    sprites === undefined ||
+    stats === undefined
+  ) {
     return <Loading />;
   }
 
   return (
-    <>
+    <p>
       <Link to="/" className="btn">
         <i className="fa fa-chevron-left"></i> Back To Top
       </Link>
-      <div>No.{id}</div>
-      <div>{names[7].name}</div>
-      <div>{genera[7].genus}</div>
-      <img
-        src={sprites.front_default}
-        alt={names[7].name}
-        style={{ maxWidth: '200px' }}
-      />
-    </>
+      <div className="flex-container" style={{ flexDirection: 'row' }}>
+        <div>
+          <img
+            src={sprites.front_default}
+            alt={names[7].name}
+            style={{ width: '200px' }}
+          />
+        </div>
+        <div>
+          <div>No.{id}</div>
+          <h2>{names[7].name}</h2>
+          <p>{genera[7].genus}</p>
+          <p>{generation.name}</p>
+          <p>Weight: {weight / 10}Kg</p>
+          <p>Height: {height / 10}m</p>
+        </div>
+      </div>
+      <div className="flex-container" style={{ flexDirection: 'row' }}>
+        <ul>
+          {stats.map((stat) => (
+            <li>
+              {stat.stat.name}: {stat.base_stat}
+            </li>
+          ))}
+        </ul>
+        <div>
+          <h4>Abilities</h4>
+          <ul>
+            {abilities.map((ability) => (
+              <li>{ability.ability.name}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <p>{flavor_text_entries[0].flavor_text}</p>
+    </p>
   );
 };
 
