@@ -6,6 +6,7 @@ import {
   SEARCH_POKEMON,
   CLEAR_SEARCH,
   SET_LOADING,
+  CLEAR_DATA,
 } from '../types';
 
 const pokemonReducer = (state, action) => {
@@ -51,6 +52,14 @@ const pokemonReducer = (state, action) => {
       return {
         ...state,
         isLoading: true,
+      };
+    case CLEAR_DATA:
+      return {
+        ...state,
+        pokemonIndividualData: [],
+        pokemonSpeciesData: [],
+        search: null,
+        isLoading: false,
       };
     default:
       return state;

@@ -5,3 +5,4 @@ export const SET_GENERATION = 'SET_GENERATION';
 export const SEARCH_POKEMON = 'SEARCH_POKEMON';
 export const CLEAR_SEARCH = 'CLEAR_SEARCH';
 export const SET_LOADING = 'SET_LOADING';
+export const CLEAR_DATA = 'CLEAR_DATA';

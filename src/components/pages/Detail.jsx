@@ -23,7 +23,7 @@ const Detail = ({ match }) => {
   }, []);
 
   if (names === undefined || genera === undefined || sprites === undefined) {
-    return 'Loading';
+    return <Loading />;
   }
 
   return (
@@ -31,21 +31,14 @@ const Detail = ({ match }) => {
       <Link to="/" className="btn">
         <i className="fa fa-chevron-left"></i> Back To Top
       </Link>
-
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <>
-          <div>No.{id}</div>
-          <div>{names[7].name}</div>
-          <div>{genera[7].genus}</div>
-          <img
-            src={sprites.front_default}
-            alt={names[7].name}
-            style={{ maxWidth: '200px' }}
-          />
-        </>
-      )}
+      <div>No.{id}</div>
+      <div>{names[7].name}</div>
+      <div>{genera[7].genus}</div>
+      <img
+        src={sprites.front_default}
+        alt={names[7].name}
+        style={{ maxWidth: '200px' }}
+      />
     </>
   );
 };

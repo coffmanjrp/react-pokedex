@@ -9,6 +9,7 @@ import {
   SEARCH_POKEMON,
   CLEAR_SEARCH,
   SET_LOADING,
+  CLEAR_DATA,
 } from '../types';
 
 const PokemonState = ({ children }) => {
@@ -104,6 +105,9 @@ const PokemonState = ({ children }) => {
   // Set loading
   const setLoading = () => dispatch({ type: SET_LOADING });
 
+  // Clear states
+  const clearData = () => dispatch({ type: CLEAR_DATA });
+
   return (
     <PokemonContext.Provider
       value={{
@@ -120,6 +124,7 @@ const PokemonState = ({ children }) => {
         searchPokemon,
         clearSearch,
         setLoading,
+        clearData,
       }}
     >
       {children}

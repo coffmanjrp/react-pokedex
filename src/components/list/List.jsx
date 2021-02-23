@@ -1,11 +1,17 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ListItem } from './';
 import { Loading } from '../layouts';
 import { PokemonContext } from '../../context/pokemon';
 
 const List = () => {
   const pokemonContext = useContext(PokemonContext);
-  const { pokemonData, search, isLoading } = pokemonContext;
+  const { pokemonData, search, isLoading, clearData } = pokemonContext;
+
+  useEffect(() => {
+    clearData();
+
+    // eslint-disable-next-line
+  }, []);
 
   if (isLoading) {
     return <Loading />;
