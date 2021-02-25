@@ -42,7 +42,7 @@ const Detail = ({ match }) => {
   }
 
   return (
-    <p>
+    <>
       <Link to="/" className="btn">
         <i className="fa fa-chevron-left"></i> Back To Top
       </Link>
@@ -75,8 +75,8 @@ const Detail = ({ match }) => {
         <div>
           <h4>Stats</h4>
           <ul>
-            {stats.map((stat) => (
-              <li>
+            {stats.map((stat, index) => (
+              <li key={index}>
                 {stat.stat.name}: {stat.base_stat}
               </li>
             ))}
@@ -85,14 +85,14 @@ const Detail = ({ match }) => {
         <div>
           <h4>Abilities</h4>
           <ul>
-            {abilities.map((ability) => (
-              <li>{ability.ability.name}</li>
+            {abilities.map((ability, index) => (
+              <li key={index}>{ability.ability.name}</li>
             ))}
           </ul>
         </div>
       </div>
       <p>{flavor_text_entries[0].flavor_text}</p>
-    </p>
+    </>
   );
 };
 
