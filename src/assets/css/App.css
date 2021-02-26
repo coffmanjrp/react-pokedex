@@ -67,6 +67,13 @@ img {
           align-items: center;
 }
 
+.flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 /* Padding */
 .p {
   padding: 0.5rem;
@@ -163,6 +170,55 @@ img {
 
 .mx-3 {
   margin: 0 3rem;
+}
+
+/* Heading */
+.h1 {
+  font-size: 2.5rem;
+}
+
+.h2 {
+  font-size: 2rem;
+}
+
+.h3 {
+  font-size: 1.75rem;
+}
+
+.h4 {
+  font-size: 1.5rem;
+}
+
+.h5 {
+  font-size: 1.25rem;
+}
+
+.h6 {
+  font-size: 1rem;
+}
+
+/* Display */
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
 }
 
 /* Button */
@@ -384,11 +440,16 @@ img {
 }
 
 /* Forms */
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='date'],
-textarea {
+.form-group {
+  position: relative;
+  overflow: hidden;
+}
+
+.form-group input[type='text'],
+.form-group input[type='email'],
+.form-group input[type='password'],
+.form-group input[type='date'],
+.form-group textarea {
   display: block;
   padding-bottom: 0.2rem;
   width: 100%;
@@ -399,86 +460,24 @@ textarea {
   color: var(--dark-color);
 }
 
-input[type='text']::-webkit-input-placeholder,
-input[type='email']::-webkit-input-placeholder,
-input[type='password']::-webkit-input-placeholder,
-input[type='date']::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  font-family: var(--icon-fonts);
-  color: var(--primary-color);
-}
-
-input[type='text']:-ms-input-placeholder,
-input[type='email']:-ms-input-placeholder,
-input[type='password']:-ms-input-placeholder,
-input[type='date']:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  font-family: var(--icon-fonts);
-  color: var(--primary-color);
-}
-
-input[type='text']::-ms-input-placeholder,
-input[type='email']::-ms-input-placeholder,
-input[type='password']::-ms-input-placeholder,
-input[type='date']::-ms-input-placeholder,
-textarea::-ms-input-placeholder {
-  font-family: var(--icon-fonts);
-  color: var(--primary-color);
-}
-
-input[type='text']::placeholder,
-input[type='email']::placeholder,
-input[type='password']::placeholder,
-input[type='date']::placeholder,
-textarea::placeholder {
-  font-family: var(--icon-fonts);
-  color: var(--primary-color);
-}
-
-input[type='text']:focus,
-input[type='email']:focus,
-input[type='password']:focus,
-input[type='date']:focus,
-textarea:focus {
+.form-group input[type='text']:focus,
+.form-group input[type='email']:focus,
+.form-group input[type='password']:focus,
+.form-group input[type='date']:focus,
+.form-group textarea:focus {
   outline: none;
+  background-color: var(--secondary-color);
   border-bottom-color: var(--stroke-color);
 }
 
-input[type='text']:focus::-webkit-input-placeholder,
-input[type='email']:focus::-webkit-input-placeholder,
-input[type='password']:focus::-webkit-input-placeholder,
-input[type='date']:focus::-webkit-input-placeholder,
-textarea:focus::-webkit-input-placeholder {
-  color: var(--dark-color);
-}
-
-input[type='text']:focus:-ms-input-placeholder,
-input[type='email']:focus:-ms-input-placeholder,
-input[type='password']:focus:-ms-input-placeholder,
-input[type='date']:focus:-ms-input-placeholder,
-textarea:focus:-ms-input-placeholder {
-  color: var(--dark-color);
-}
-
-input[type='text']:focus::-ms-input-placeholder,
-input[type='email']:focus::-ms-input-placeholder,
-input[type='password']:focus::-ms-input-placeholder,
-input[type='date']:focus::-ms-input-placeholder,
-textarea:focus::-ms-input-placeholder {
-  color: var(--dark-color);
-}
-
-input[type='text']:focus::placeholder,
-input[type='email']:focus::placeholder,
-input[type='password']:focus::placeholder,
-input[type='date']:focus::placeholder,
-textarea:focus::placeholder {
-  color: var(--dark-color);
-}
-
-input[type='submit'],
-button {
+.form-group input[type='submit'],
+.form-group button {
   font: inherit;
+}
+
+.form-group label {
+  position: absolute;
+  z-index: -1;
 }
 
 /* Loading spinner */

@@ -1,4 +1,5 @@
 import { useContext, useEffect } from 'react';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { generations } from '../../utils';
 import { PokemonContext } from '../../context/pokemon';
 
@@ -43,7 +44,7 @@ const Pagination = () => {
           ''
         ) : (
           <button name="prev" className="btn btn-link" onClick={handlePrev}>
-            <i className="fa fa-chevron-left"></i>
+            <FaChevronLeft className="block h4" />
           </button>
         )}
       </div>
@@ -58,7 +59,7 @@ const Pagination = () => {
           ''
         ) : (
           <button name="next" className="btn btn-link" onClick={handleNext}>
-            <i className="fa fa-chevron-right"></i>
+            <FaChevronRight className="block h4" />
           </button>
         )}
       </div>

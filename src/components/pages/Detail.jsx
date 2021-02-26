@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FaChevronLeft } from 'react-icons/fa';
 import { Loading } from '../layouts';
 import { PokemonContext } from '../../context/pokemon';
 
@@ -44,9 +45,10 @@ const Detail = ({ match }) => {
   return (
     <>
       <Link to="/" className="btn">
-        <i className="fa fa-chevron-left"></i> Back To Top
+        <FaChevronLeft style={{ position: 'relative', top: '0.125rem' }} />{' '}
+        <span>Back To Top</span>
       </Link>
-      <div className="flex-container" style={{ flexDirection: 'row' }}>
+      <div className="flex-container flex-row">
         <div>
           {!isShiny ? (
             <img
@@ -71,7 +73,7 @@ const Detail = ({ match }) => {
           <p>Height: {height / 10}m</p>
         </div>
       </div>
-      <div className="flex-container" style={{ flexDirection: 'row' }}>
+      <div className="flex-container flex-row">
         <div>
           <h4>Stats</h4>
           <ul>

@@ -1,31 +1,32 @@
 /* Forms */
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='date'],
-textarea {
-  display: block;
-  padding-bottom: 0.2rem;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid var(--primary-color);
-  font-size: 1rem;
-  color: var(--dark-color);
-  &::placeholder {
-    font-family: var(--icon-fonts);
-    color: var(--primary-color);
-  }
-  &:focus {
-    outline: none;
-    border-bottom-color: var(--stroke-color);
-    &::placeholder {
-      color: var(--dark-color);
+.form-group {
+  position: relative;
+  overflow: hidden;
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='date'],
+  textarea {
+    display: block;
+    padding-bottom: 0.2rem;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    font-size: 1rem;
+    color: var(--dark-color);
+    &:focus {
+      outline: none;
+      background-color: var(--secondary-color);
+      border-bottom-color: var(--stroke-color);
     }
   }
-}
-
-input[type='submit'],
-button {
-  font: inherit;
+  input[type='submit'],
+  button {
+    font: inherit;
+  }
+  label {
+    position: absolute;
+    z-index: -1;
+  }
 }

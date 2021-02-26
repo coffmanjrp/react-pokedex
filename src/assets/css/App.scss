@@ -57,6 +57,10 @@ img {
   align-items: center;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 /* Padding */
 .p {
   padding: 0.5rem;
@@ -135,6 +139,52 @@ img {
   &-3 {
     margin: 0 3rem;
   }
+}
+
+/* Heading */
+.h1 {
+  font-size: 2.5rem;
+}
+
+.h2 {
+  font-size: 2rem;
+}
+
+.h3 {
+  font-size: 1.75rem;
+}
+
+.h4 {
+  font-size: 1.5rem;
+}
+
+.h5 {
+  font-size: 1.25rem;
+}
+
+.h6 {
+  font-size: 1rem;
+}
+
+/* Display */
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 @import 'btn';

@@ -1,4 +1,5 @@
 import { useContext, useEffect, useRef } from 'react';
+import { FaSearch } from 'react-icons/fa';
 import { PokemonContext } from '../../context/pokemon';
 
 const Search = () => {
@@ -26,13 +27,12 @@ const Search = () => {
     <>
       <div>
         <form>
-          <input
-            type="text"
-            name="search"
-            placeholder="&nbsp;&#xf002;"
-            ref={text}
-            onChange={onChange}
-          />
+          <div className="form-group">
+            <label htmlFor="search">
+              <FaSearch />
+            </label>
+            <input type="text" name="search" ref={text} onChange={onChange} />
+          </div>
         </form>
       </div>
     </>

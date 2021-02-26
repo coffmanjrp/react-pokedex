@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom';
+import { CgPokemon } from 'react-icons/cg';
 import { Pagination, Search } from './';
 
 const Navbar = ({ title }) => {
   return (
     <>
       <div className="navbar">
-        <h1>{title}</h1>
+        <div className="flex-container flex-row">
+          <h1>{title}</h1>
+          <CgPokemon className="h1" />
+        </div>
         <Pagination />
         <ul>
           <li>
