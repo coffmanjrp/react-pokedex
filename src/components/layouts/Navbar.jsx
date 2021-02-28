@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
 import { CgPokemon } from 'react-icons/cg';
-import { Pagination, Search } from './';
+import { Pagination, Sidebar } from './';
 
 const Navbar = ({ title }) => {
   return (
@@ -11,17 +10,7 @@ const Navbar = ({ title }) => {
           <CgPokemon className="h1" />
         </div>
         <Pagination />
-        <ul>
-          <li>
-            <Search />
-          </li>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
+        <Sidebar />
       </div>
     </>
   );
