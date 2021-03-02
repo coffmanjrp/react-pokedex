@@ -22,6 +22,8 @@ const Sidebar = () => {
     return () => {
       document.removeEventListener('click', handleClick);
     };
+
+    // eslint-disable-next-line
   }, []);
 
   return (
