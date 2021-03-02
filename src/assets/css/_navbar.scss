@@ -29,12 +29,12 @@
 }
 
 .menu-bars {
-  position: relative;
-  margin-right: 2rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 45px;
   width: 32px;
   height: 32px;
   font-size: 2rem;
-  z-index: 1000;
 }
 
 .nav-menu {
