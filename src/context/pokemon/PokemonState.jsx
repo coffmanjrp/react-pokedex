@@ -29,28 +29,28 @@ const PokemonState = ({ children }) => {
     setLoading();
 
     const fetchData = async () => {
-      const res = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon?offset=${generation[1]}&limit=${generation[2]}`
-      );
-      const data = await res.data;
+      try {
+        const res = await axios.get(
+          `https://pokeapi.co/api/v2/pokemon?offset=${generation[1]}&limit=${generation[2]}`
+        );
+        const data = await res.data;
 
-      const dataResult = await Promise.all(
-        data.results.map(async (result) => {
-          const res = await axios.get(result.url);
-          const data = await res.data;
+        const dataResult = await Promise.all(
+          data.results.map(async (result) => {
+            const res = await axios.get(result.url);
+            const data = await res.data;
 
-          return data;
-        })
-      );
+            return data;
+          })
+        );
 
-      dispatch({ type: GET_POKEMON_DATA, payload: dataResult });
+        dispatch({ type: GET_POKEMON_DATA, payload: dataResult });
+      } catch (error) {
+        console.log('test error');
+      }
     };
 
-    try {
-      fetchData();
-    } catch (error) {
-      throw new Error(error);
-    }
+    fetchData();
   };
 
   // Get individual Pokemon data
