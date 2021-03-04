@@ -50,6 +50,11 @@ img {
   width: 100%;
 }
 
+svg {
+  position: relative;
+  top: 0.125rem;
+}
+
 /* Utilities */
 .flex-container {
   display: -webkit-box;
@@ -428,7 +433,7 @@ img {
 
 .menu-bars {
   position: absolute;
-  top: 0.5rem;
+  top: 5px;
   right: 45px;
   width: 32px;
   height: 32px;

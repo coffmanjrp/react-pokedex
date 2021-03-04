@@ -45,8 +45,7 @@ const Detail = ({ match }) => {
   return (
     <>
       <Link to="/" className="btn">
-        <FaChevronLeft style={{ position: 'relative', top: '0.125rem' }} />{' '}
-        <span>Back To Top</span>
+        <FaChevronLeft /> <span>Back To Top</span>
       </Link>
       <div className="flex-container flex-row">
         <div>

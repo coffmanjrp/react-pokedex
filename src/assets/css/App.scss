@@ -49,6 +49,11 @@ img {
   width: 100%;
 }
 
+svg {
+  position: relative;
+  top: 0.125rem;
+}
+
 /* Utilities */
 .flex-container {
   display: flex;

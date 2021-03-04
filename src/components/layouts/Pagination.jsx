@@ -44,7 +44,7 @@ const Pagination = () => {
           ''
         ) : (
           <button name="prev" className="btn btn-link" onClick={handlePrev}>
-            <FaChevronLeft className="block h4" />
+            <FaChevronLeft className="h4" />
           </button>
         )}
       </div>
@@ -59,7 +59,7 @@ const Pagination = () => {
           ''
         ) : (
           <button name="next" className="btn btn-link" onClick={handleNext}>
-            <FaChevronRight className="block h4" />
+            <FaChevronRight className="h4" />
           </button>
         )}
       </div>
